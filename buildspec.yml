@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "Cloning repository from GitHub"
       - rm -rf app
-      - git clone https://github.com/your-username/your-repository.git app
+      - git clone https://github.com/mohsmohamed/staytus.git app
       - cd app
   build:
     commands:
@@ -17,5 +17,4 @@ phases:
   post_build:
     commands:
       - echo "Pushing Docker image to Amazon ECR"  # This step is only relevant if using ECR
-      - docker-compose -f docker-compose.yml push  # This step is only relevant if using ECR
 
