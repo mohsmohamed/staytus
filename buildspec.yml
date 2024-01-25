@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 8.2  # Change this to your desired PHP version
+  pre_build:
+    commands:
+      - echo "Cloning repository from GitHub"
+      - rm -rf app
+      - git clone https://github.com/your-username/your-repository.git app
+      - cd app
+  build:
+    commands:
+      - echo "Building Docker image"
+      - docker-compose -f docker-compose.yml build
+  post_build:
+    commands:
+      - echo "Pushing Docker image to Amazon ECR"  # This step is only relevant if using ECR
+      - docker-compose -f docker-compose.yml push  # This step is only relevant if using ECR
+
