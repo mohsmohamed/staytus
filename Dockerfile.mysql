@@ -1,0 +1,27 @@
+# Use the official MySQL image as a base image
+FROM mysql/mysql-server:8.0
+
+# Set the working directory in the container
+WORKDIR /var/lib/mysql
+
+# Copy the initialization script to create the testing database
+COPY ./vendor/laravel/sail/database/mysql/create-testing-database.sh /docker-entrypoint-initdb.d/10-create-testing-database.sh
+
+# Expose the default MySQL port
+EXPOSE 3306
+
+# Environment variables for MySQL configuration
+ENV MYSQL_ROOT_PASSWORD=${DB_PASSWORD} \
+    MYSQL_ROOT_HOST='%' \
+    MYSQL_DATABASE=${DB_DATABASE} \
+    MYSQL_USER=${DB_USERNAME} \
+    MYSQL_PASSWORD=${DB_PASSWORD} \
+    MYSQL_ALLOW_EMPTY_PASSWORD=1
+
+# Define a health check for MySQL
+HEALTHCHECK --interval=5s --timeout=5s \
+  CMD mysqladmin ping -p${DB_PASSWORD} || exit 1
+
+# Run the MySQL server
+CMD ["mysqld"]
+
