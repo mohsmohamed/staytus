@@ -8,7 +8,7 @@ if [ ! -d /.composer ]; then
     mkdir /.composer
 fi
 
-chown -R $WWWUSER:$WWWGROUP /var/www/html/storage /var/www/html/bootstrap
+chown -R sail:sail /var/www/html/storage /var/www/html/bootstrap
 chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 chmod -R ugo+rw /.composer
