@@ -1,5 +1,6 @@
 Repo url : https://github.com/mohsmohamed/staytus
-application url : awseb--AWSEB-SA9JwQjvuwyG-2066204051.eu-north-1.elb.amazonaws.com
+
+Application url : awseb--AWSEB-SA9JwQjvuwyG-2066204051.eu-north-1.elb.amazonaws.com
 
 # Test Assignment A: Docker and Microservices
 # Project Overview
