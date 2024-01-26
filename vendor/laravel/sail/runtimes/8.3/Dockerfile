@@ -3,6 +3,7 @@ FROM ubuntu:22.04
 LABEL maintainer="Taylor Otwell"
 
 ARG WWWGROUP=1337
+ARG WWWUSER=1337
 ARG NODE_VERSION=20
 ARG POSTGRES_VERSION=15
 
@@ -73,6 +74,5 @@ RUN chmod +x /usr/local/bin/start-container
 # ... (rest of your Dockerfile)
 
 
-EXPOSE 8000
 
 ENTRYPOINT ["start-container"]
