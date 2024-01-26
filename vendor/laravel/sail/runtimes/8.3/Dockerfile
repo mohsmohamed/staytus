@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-LABEL maintainer="Taylor Otwell"
+LABEL maintainer="Soliman"
 
 ARG WWWGROUP=1337
 ARG WWWUSER=1337

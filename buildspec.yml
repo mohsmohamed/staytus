@@ -16,5 +16,4 @@ phases:
       - docker-compose -f docker-compose.yml build
   post_build:
     commands:
-      - echo "Pushing Docker image to Amazon ECR"  # This step is only relevant if using ECR
 
